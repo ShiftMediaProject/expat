@@ -141,41 +141,41 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">
     <TargetName>expatd</TargetName>
     <IntDir>$(ProjectDir)\obj\$(Configuration)\$(Platform)\</IntDir>
-    <OutDir>..\..\..\</OutDir>
+    <OutDir>..\..\..\msvc32\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">
     <TargetName>expatd</TargetName>
-    <OutDir>..\..\..\</OutDir>
+    <OutDir>..\..\..\msvc64\</OutDir>
     <IntDir>$(ProjectDir)\obj\$(Configuration)\$(Platform)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">
     <TargetName>expat</TargetName>
     <IntDir>$(ProjectDir)\obj\$(Configuration)\$(Platform)\</IntDir>
-    <OutDir>..\..\..\</OutDir>
+    <OutDir>..\..\..\msvc32\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">
     <TargetName>expat</TargetName>
-    <OutDir>..\..\..\</OutDir>
+    <OutDir>..\..\..\msvc64\</OutDir>
     <IntDir>$(ProjectDir)\obj\$(Configuration)\$(Platform)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <TargetName>libexpatd</TargetName>
     <IntDir>$(ProjectDir)\obj\$(Configuration)\$(Platform)\</IntDir>
-    <OutDir>..\..\..\</OutDir>
+    <OutDir>..\..\..\msvc32\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <TargetName>libexpatd</TargetName>
-    <OutDir>..\..\..\</OutDir>
+    <OutDir>..\..\..\msvc64\</OutDir>
     <IntDir>$(ProjectDir)\obj\$(Configuration)\$(Platform)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <TargetName>libexpat</TargetName>
     <IntDir>$(ProjectDir)\obj\$(Configuration)\$(Platform)\</IntDir>
-    <OutDir>..\..\..\</OutDir>
+    <OutDir>..\..\..\msvc32\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <TargetName>libexpat</TargetName>
-    <OutDir>..\..\..\</OutDir>
+    <OutDir>..\..\..\msvc64\</OutDir>
     <IntDir>$(ProjectDir)\obj\$(Configuration)\$(Platform)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -196,12 +196,12 @@
     <Lib>
       <TargetMachine>MachineX86</TargetMachine>
       <SubSystem>Windows</SubSystem>
-      <OutputFile>$(OutDir)\lib\msvc32\$(TargetName)$(TargetExt)</OutputFile>
+      <OutputFile>$(OutDir)\lib\$(TargetName)$(TargetExt)</OutputFile>
     </Lib>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include\msvc
-copy ..\lib\expat.h $(OutDir)\include\msvc
-copy ..\lib\expat_external.h $(OutDir)\include\msvc
+      <Command>mkdir $(OutDir)\include
+copy ..\lib\expat.h $(OutDir)\include
+copy ..\lib\expat_external.h $(OutDir)\include
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\expat.txt</Command>
     </PostBuildEvent>
@@ -229,12 +229,12 @@ del ..\expat_config.h
     <Lib>
       <TargetMachine>MachineX64</TargetMachine>
       <SubSystem>Windows</SubSystem>
-      <OutputFile>$(OutDir)\lib\msvc64\$(TargetName)$(TargetExt)</OutputFile>
+      <OutputFile>$(OutDir)\lib\$(TargetName)$(TargetExt)</OutputFile>
     </Lib>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include\msvc
-copy ..\lib\expat.h $(OutDir)\include\msvc
-copy ..\lib\expat_external.h $(OutDir)\include\msvc
+      <Command>mkdir $(OutDir)\include
+copy ..\lib\expat.h $(OutDir)\include
+copy ..\lib\expat_external.h $(OutDir)\include
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\expat.txt</Command>
     </PostBuildEvent>
@@ -259,16 +259,16 @@ del ..\expat_config.h
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
-      <OutputFile>$(OutDir)\bin\msvc32\$(TargetName)$(TargetExt)</OutputFile>
-      <ImportLibrary>$(OutDir)\lib\msvc32\$(TargetName).lib</ImportLibrary>
-      <ProgramDatabaseFile>$(OutDir)\bin\msvc32\$(TargetName).pdb</ProgramDatabaseFile>
+      <OutputFile>$(OutDir)\bin\$(TargetName)$(TargetExt)</OutputFile>
+      <ImportLibrary>$(OutDir)\lib\$(TargetName).lib</ImportLibrary>
+      <ProgramDatabaseFile>$(OutDir)\bin\$(TargetName).pdb</ProgramDatabaseFile>
       <ModuleDefinitionFile>..\lib\libexpat.def</ModuleDefinitionFile>
-      <ProfileGuidedDatabase>$(OutDir)\bin\msvc32\$(TargetName).pgd</ProfileGuidedDatabase>
+      <ProfileGuidedDatabase>$(OutDir)\bin\$(TargetName).pgd</ProfileGuidedDatabase>
     </Link>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include\msvc
-copy ..\lib\expat.h $(OutDir)\include\msvc
-copy ..\lib\expat_external.h $(OutDir)\include\msvc
+      <Command>mkdir $(OutDir)\include
+copy ..\lib\expat.h $(OutDir)\include
+copy ..\lib\expat_external.h $(OutDir)\include
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\expat.txt</Command>
     </PostBuildEvent>
@@ -293,16 +293,16 @@ del ..\expat_config.h
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
-      <OutputFile>$(OutDir)\bin\msvc64\$(TargetName)$(TargetExt)</OutputFile>
-      <ImportLibrary>$(OutDir)\lib\msvc64\$(TargetName).lib</ImportLibrary>
-      <ProgramDatabaseFile>$(OutDir)\bin\msvc64\$(TargetName).pdb</ProgramDatabaseFile>
+      <OutputFile>$(OutDir)\bin\$(TargetName)$(TargetExt)</OutputFile>
+      <ImportLibrary>$(OutDir)\lib\$(TargetName).lib</ImportLibrary>
+      <ProgramDatabaseFile>$(OutDir)\bin\$(TargetName).pdb</ProgramDatabaseFile>
       <ModuleDefinitionFile>..\lib\libexpat.def</ModuleDefinitionFile>
-      <ProfileGuidedDatabase>$(OutDir)\bin\msvc64\$(TargetName).pgd</ProfileGuidedDatabase>
+      <ProfileGuidedDatabase>$(OutDir)\bin\$(TargetName).pgd</ProfileGuidedDatabase>
     </Link>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include\msvc
-copy ..\lib\expat.h $(OutDir)\include\msvc
-copy ..\lib\expat_external.h $(OutDir)\include\msvc
+      <Command>mkdir $(OutDir)\include
+copy ..\lib\expat.h $(OutDir)\include
+copy ..\lib\expat_external.h $(OutDir)\include
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\expat.txt</Command>
     </PostBuildEvent>
@@ -344,12 +344,12 @@ del ..\expat_config.h
     </Lib>
     <Lib>
       <SubSystem>Windows</SubSystem>
-      <OutputFile>$(OutDir)\lib\msvc32\$(TargetName)$(TargetExt)</OutputFile>
+      <OutputFile>$(OutDir)\lib\$(TargetName)$(TargetExt)</OutputFile>
     </Lib>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include\msvc
-copy ..\lib\expat.h $(OutDir)\include\msvc
-copy ..\lib\expat_external.h $(OutDir)\include\msvc
+      <Command>mkdir $(OutDir)\include
+copy ..\lib\expat.h $(OutDir)\include
+copy ..\lib\expat_external.h $(OutDir)\include
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\expat.txt</Command>
     </PostBuildEvent>
@@ -391,12 +391,12 @@ del ..\expat_config.h
     </Lib>
     <Lib>
       <SubSystem>Windows</SubSystem>
-      <OutputFile>$(OutDir)\lib\msvc64\$(TargetName)$(TargetExt)</OutputFile>
+      <OutputFile>$(OutDir)\lib\$(TargetName)$(TargetExt)</OutputFile>
     </Lib>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include\msvc
-copy ..\lib\expat.h $(OutDir)\include\msvc
-copy ..\lib\expat_external.h $(OutDir)\include\msvc
+      <Command>mkdir $(OutDir)\include
+copy ..\lib\expat.h $(OutDir)\include
+copy ..\lib\expat_external.h $(OutDir)\include
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\expat.txt</Command>
     </PostBuildEvent>
@@ -433,16 +433,16 @@ del ..\expat_config.h
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <SubSystem>Windows</SubSystem>
-      <OutputFile>$(OutDir)\bin\msvc32\$(TargetName)$(TargetExt)</OutputFile>
-      <ImportLibrary>$(OutDir)\lib\msvc32\$(TargetName).lib</ImportLibrary>
-      <ProgramDatabaseFile>$(OutDir)\bin\msvc32\$(TargetName).pdb</ProgramDatabaseFile>
+      <OutputFile>$(OutDir)\bin\$(TargetName)$(TargetExt)</OutputFile>
+      <ImportLibrary>$(OutDir)\lib\$(TargetName).lib</ImportLibrary>
+      <ProgramDatabaseFile>$(OutDir)\bin\$(TargetName).pdb</ProgramDatabaseFile>
       <ModuleDefinitionFile>..\lib\libexpat.def</ModuleDefinitionFile>
-      <ProfileGuidedDatabase>$(OutDir)\bin\msvc32\$(TargetName).pgd</ProfileGuidedDatabase>
+      <ProfileGuidedDatabase>$(OutDir)\bin\$(TargetName).pgd</ProfileGuidedDatabase>
     </Link>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include\msvc
-copy ..\lib\expat.h $(OutDir)\include\msvc
-copy ..\lib\expat_external.h $(OutDir)\include\msvc
+      <Command>mkdir $(OutDir)\include
+copy ..\lib\expat.h $(OutDir)\include
+copy ..\lib\expat_external.h $(OutDir)\include
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\expat.txt</Command>
     </PostBuildEvent>
@@ -479,16 +479,16 @@ del ..\expat_config.h
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <SubSystem>Windows</SubSystem>
-      <OutputFile>$(OutDir)\bin\msvc64\$(TargetName)$(TargetExt)</OutputFile>
-      <ImportLibrary>$(OutDir)\lib\msvc64\$(TargetName).lib</ImportLibrary>
-      <ProgramDatabaseFile>$(OutDir)\bin\msvc64\$(TargetName).pdb</ProgramDatabaseFile>
+      <OutputFile>$(OutDir)\bin\$(TargetName)$(TargetExt)</OutputFile>
+      <ImportLibrary>$(OutDir)\lib\$(TargetName).lib</ImportLibrary>
+      <ProgramDatabaseFile>$(OutDir)\bin\$(TargetName).pdb</ProgramDatabaseFile>
       <ModuleDefinitionFile>..\lib\libexpat.def</ModuleDefinitionFile>
-      <ProfileGuidedDatabase>$(OutDir)\bin\msvc64\$(TargetName).pgd</ProfileGuidedDatabase>
+      <ProfileGuidedDatabase>$(OutDir)\bin\$(TargetName).pgd</ProfileGuidedDatabase>
     </Link>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include\msvc
-copy ..\lib\expat.h $(OutDir)\include\msvc
-copy ..\lib\expat_external.h $(OutDir)\include\msvc
+      <Command>mkdir $(OutDir)\include
+copy ..\lib\expat.h $(OutDir)\include
+copy ..\lib\expat_external.h $(OutDir)\include
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\expat.txt</Command>
     </PostBuildEvent>
