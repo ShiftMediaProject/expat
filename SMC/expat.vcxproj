@@ -257,7 +257,6 @@ del ..\expat_config.h
       <ExceptionHandling>false</ExceptionHandling>
     </ClCompile>
     <Link>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <OutputFile>$(OutDir)\bin\$(TargetName)$(TargetExt)</OutputFile>
       <ImportLibrary>$(OutDir)\lib\$(TargetName).dll.lib</ImportLibrary>
@@ -291,7 +290,6 @@ del ..\expat_config.h
       <ExceptionHandling>false</ExceptionHandling>
     </ClCompile>
     <Link>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <OutputFile>$(OutDir)\bin\$(TargetName)$(TargetExt)</OutputFile>
       <ImportLibrary>$(OutDir)\lib\$(TargetName).dll.lib</ImportLibrary>
@@ -429,7 +427,6 @@ del ..\expat_config.h
       <ExceptionHandling>false</ExceptionHandling>
     </ClCompile>
     <Link>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <SubSystem>Windows</SubSystem>
@@ -475,7 +472,6 @@ del ..\expat_config.h
       <ExceptionHandling>false</ExceptionHandling>
     </ClCompile>
     <Link>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <SubSystem>Windows</SubSystem>
